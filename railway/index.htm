@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Railway Reservation System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .main-container {
+      max-width: 800px;
+      width: 100%;
+    }
+    .welcome-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 50px 40px;
+      text-align: center;
+    }
+    .logo-section {
+      margin-bottom: 30px;
+    }
+    .logo-icon {
+      font-size: 60px;
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+    h1 {
+      color: #667eea;
+      font-weight: 700;
+      font-size: 2.5em;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+    .tagline {
+      color: #999;
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .action-btn {
+      padding: 25px 20px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      color: white;
+      min-height: 140px;
+    }
+    .action-btn i {
+      font-size: 32px;
+    }
+    .action-btn:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      color: white;
+      text-decoration: none;
+    }
+    .btn-register {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .btn-register:hover {
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    }
+    .btn-book {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    .btn-book:hover {
+      box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4);
+    }
+    .btn-tickets {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .btn-tickets:hover {
+      box-shadow: 0 15px 40px rgba(79, 172, 254, 0.4);
+    }
+    .btn-admin {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+    .btn-admin:hover {
+      box-shadow: 0 15px 40px rgba(250, 112, 154, 0.4);
+    }
+    @media (max-width: 576px) {
+      .welcome-card {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      .tagline {
+        font-size: 16px;
+      }
+      .buttons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+      .action-btn {
+        padding: 20px 15px;
+        min-height: 120px;
+        font-size: 14px;
+      }
+      .action-btn i {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="welcome-card">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <i class="fas fa-train"></i>
+        </div>
+        <h1>Railway Reservation</h1>
+      </div>
+      
+      <p class="tagline">Book your journey with ease</p>
+
+      <div class="buttons-grid">
+        <a href="http://localhost/railway/new_user_form.html" class="action-btn btn-register">
+          <i class="fas fa-user-plus"></i>
+          <span>Register</span>
+        </a>
+        
+        <a href="http://localhost/railway/enquiry.php" class="action-btn btn-book">
+          <i class="fas fa-ticket-alt"></i>
+          <span>Book Ticket</span>
+        </a>
+        
+        <a href="http://localhost/railway/user_login.htm" class="action-btn btn-tickets">
+          <i class="fas fa-history"></i>
+          <span>My Tickets</span>
+        </a>
+        
+        <a href="http://localhost/railway/admin_login.php" class="action-btn btn-admin">
+          <i class="fas fa-lock"></i>
+          <span>Admin Panel</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
