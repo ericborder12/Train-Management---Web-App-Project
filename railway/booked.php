@@ -1,5 +1,6 @@
 <?php
 require "db.php";
+require_once "qr_ticket.php";
 
 $query="SELECT * FROM resv where status='BOOKED' ";
 $result=mysqli_query($conn,$query);
@@ -97,6 +98,7 @@ $conn->close();
           <thead>
             <tr>
               <th><i class="fas fa-ticket-alt"></i> PNR</th>
+              <th><i class="fas fa-qrcode"></i> QR</th>
               <th><i class="fas fa-user"></i> User ID</th>
               <th><i class="fas fa-train"></i> Train</th>
               <th><i class="fas fa-calendar"></i> Date</th>
@@ -110,6 +112,17 @@ $conn->close();
             <?php foreach($bookings as $booking) { ?>
             <tr>
               <td><strong><?php echo $booking['pnr']; ?></strong></td>
+              <td>
+                <?php
+                  $payload = build_ticket_payload($booking);
+                  $data = generate_qr_data_uri($payload, 100);
+                  if ($data !== null) {
+                      echo '<img src="' . $data . '" width="100" height="100" style="border-radius:6px" alt="QR Ticket">';
+                  } else {
+                      echo generate_qr_img_tag($payload, 100, ['style'=>'border-radius:6px']);
+                  }
+                ?>
+              </td>
               <td><?php echo $booking['id']; ?></td>
               <td><?php echo $booking['trainno']; ?></td>
               <td><?php echo date('d/m/Y', strtotime($booking['doj'])); ?></td>
