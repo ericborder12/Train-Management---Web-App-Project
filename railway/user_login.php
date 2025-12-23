@@ -295,7 +295,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <td><?php echo date('d/m/Y', strtotime($booking['doj'])); ?></td>
                 <td><?php echo $booking['class']; ?></td>
                 <td><?php echo $booking['nos']; ?></td>
-                <td>₹<?php echo number_format($booking['tfare'], 2); ?></td>
+                <td><?php echo number_format($booking['tfare'], 2); ?></td>
                 <td>
                   <span class="status-badge <?php echo $statusClass; ?>">
                     <?php echo $booking['status']; ?>
